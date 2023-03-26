@@ -1,0 +1,15 @@
+.docker
+.husky
+coverage
+dist
+node_modules
+.editorconfig
+.eslintrc.json
+.gitattributes
+.gitignore
+.commitlint.config.js
+docker-compose.yml
+Dockerfile
+jest.config.js
+jest-e2e.config.js
+README.md

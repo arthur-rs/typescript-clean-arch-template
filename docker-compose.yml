@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clean-arch-app
+    env_file:
+      - .env
+    ports:
+      - "${APP_PORT}:3000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    networks:
+      - default
+
+  db:
+    image: postgres:15.2
+    container_name: clean-arch-db
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./.docker/volumes/db_data:/var/lib/postgresql/data
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
