@@ -39,6 +39,13 @@ git clone https://github.com/arthur-rs/typescript-clean-arch-template.git
 ```bash
 npm install
 ```
+4. Renomeie o arquivo `.env.example` para `.env` e preencha as variáveis de ambiente
+
+5. Incialize o Prisma
+
+```bash
+npm run prisma:generate
+```
 
 3. E por fim, instale os hooks do husky
 
