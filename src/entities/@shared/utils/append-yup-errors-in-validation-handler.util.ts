@@ -1,7 +1,7 @@
 import * as yup from "yup"
 
-import { DomainError } from "@/@shared/errors/domain.error"
-import { ValidationHandler } from "@/@shared/interfaces/validation-handler.interface"
+import { DomainError } from "@/entities/@shared/errors/domain.error"
+import { ValidationHandler } from "@/entities/@shared/interfaces/validation-handler.interface"
 
 export function appendYupErrorsInValidationHandler<T>(
 	handler: ValidationHandler, 

@@ -1,5 +1,5 @@
-import { DomainError } from "@/@shared/errors/domain.error"
-import { Notification } from "@/@shared/notification.validation-handler"
+import { DomainError } from "@/entities/@shared/errors/domain.error"
+import { Notification } from "@/entities/@shared/notification.validation-handler"
 
 describe("(Unit) notification validation handler", () => {
 

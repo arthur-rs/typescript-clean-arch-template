@@ -1,4 +1,4 @@
-import { DomainError } from "@/@shared/errors/domain.error"
+import { DomainError } from "@/entities/@shared/errors/domain.error"
 
 export interface ValidationHandler {
 	get errors(): DomainError[]

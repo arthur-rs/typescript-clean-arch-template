@@ -1,26 +1,21 @@
 {
-    "compilerOptions": {
-        "lib": ["ESNext", "dom"],
-        "outDir": "lib",
-        "removeComments": true,
-        "target": "ES6",
-        "baseUrl": "./",
-        "esModuleInterop": true,
-        "moduleResolution": "node",
-        "paths": {
-            "@/*": ["./src/*"]
-        },
-        "sourceMap": true,
-        "sourceRoot": "/",
-        "alwaysStrict": true,
-        "allowUnreachableCode": false,
-        "noImplicitAny": true,
-        "strictNullChecks": true,
-        "noImplicitReturns": true,
-        "noUncheckedIndexedAccess": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true
-    },
-    "include": ["./**/*.ts"],
-    "exclude": ["node_modules/**/*"]
-}
+	"compilerOptions": {
+	  "module": "commonjs",
+	  "esModuleInterop": true,
+	  "target": "es6",
+	  "moduleResolution": "node",
+	  "sourceMap": true,
+	  "experimentalDecorators": true,
+	  "emitDecoratorMetadata": true,
+	  "strict": true,
+	  "noImplicitAny": true,
+	  "declaration": true,
+	  "declarationDir": "dist/types",
+	  "outDir": "dist",
+	  "baseUrl": ".",
+	  "paths": {
+		"@/*": ["src/*"]
+	  }
+	},
+	"exclude": ["node_modules", "dist"]
+  }

@@ -1,4 +1,4 @@
-import { ValidationHandler } from "@/@shared/interfaces/validation-handler.interface"
+import { ValidationHandler } from "@/entities/@shared/interfaces/validation-handler.interface"
 
 export abstract class Validator {
 

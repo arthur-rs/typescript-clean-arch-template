@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { DomainError } from "@/@shared/errors/domain.error"
-import { Entity } from "@/@shared/entity.base"
-import { Identifier } from "@/@shared/identifier.base"
-import { NotificationError } from "@/@shared/errors/notification.error"
+import { DomainError } from "@/entities/@shared/errors/domain.error"
+import { Entity } from "@/entities/@shared/entity.base"
+import { Identifier } from "@/entities/@shared/identifier.base"
+import { NotificationError } from "@/entities/@shared/errors/notification.error"
 
 class EntityId extends Identifier<string> {
 	private readonly _value: string

@@ -1,10 +1,10 @@
 import * as yup from "yup"
 
 import { isBefore, isEqual } from "date-fns"
-import { Entity } from "@/@shared/entity.base"
-import { ValidationHandler } from "@/@shared/interfaces/validation-handler.interface"
-import { Validator } from "@/@shared/validator.base"
-import { appendYupErrorsInValidationHandler } from "@/@shared/utils/append-yup-errors-in-validation-handler.util"
+import { Entity } from "@/entities/@shared/entity.base"
+import { ValidationHandler } from "@/entities/@shared/interfaces/validation-handler.interface"
+import { Validator } from "@/entities/@shared/validator.base"
+import { appendYupErrorsInValidationHandler } from "@/entities/@shared/utils/append-yup-errors-in-validation-handler.util"
 
 export class EntityValidator<Identifier> extends Validator {
 

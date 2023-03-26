@@ -1,37 +1,46 @@
 # Node.js Template
 
-Neste repositorio temos um template para projetos Node.js com Typescript.
+Este repositório é um template para a implementação de sistemas utilizando a arquitetura limpa, uma abordagem que separa as diferentes responsabilidades de um sistema em camadas bem definidas. O repositório está organizado em quatro camadas principais: entidades, casos de uso, infraestrutura e apresentação. Cada camada possui sua própria pasta e arquivos correspondentes em TypeScript, de forma a tornar a implementação do sistema mais modular, testável e escalável. 
 
-Esse template tem o intuito de auxiliar no desenvolvimento de projetos em node.js, com uma estrutura de pastas e arquivos padronizados, além de ferramentas que auxiliam no desenvolvimento. A arquitetura utilizada é a Clean Architecture.
+Ao utilizar este template, você terá uma base sólida para a construção de um sistema bem estruturado, onde cada camada tem uma responsabilidade bem definida e é facilmente substituível, caso necessário. Além disso, o uso de TypeScript garante uma tipagem mais forte e um código mais seguro e confiável.
 
 ## Clean Architecture
 
-A Clean Architecture é uma arquitetura que visa separar as responsabilidades de cada camada do projeto, facilitando a manutenção e a escalabilidade do projeto.
+A **arquitetura limpa**, também conhecida como arquitetura hexagonal, é um padrão arquitetural que tem como objetivo principal separar as diferentes responsabilidades de um sistema, de forma a torná-lo mais modular, testável e escalável.
 
-A arquitetura Clean Architecture é composta por 4 camadas:
+A arquitetura limpa é composta por **quatro camadas principais**. A primeira camada é a de **entidades**, que contém os objetos de negócio do sistema, ou seja, as classes que representam as regras de negócio e as entidades do domínio. Essa camada é responsável por definir a estrutura e o comportamento dos objetos que são utilizados pelo sistema. Esses objetos devem ser independentes de qualquer tecnologia ou infraestrutura específica, de forma que possam ser reutilizados em diferentes contextos.
 
-- **Entities**: Camada responsável por armazenar as entidades do projeto, que são as entidades de negócio do projeto. Essas entidades são utilizadas pelas outras camadas do projeto.
+A segunda camada é a de **casos de uso**, que contém a lógica de negócio do sistema. Essa camada é responsável por implementar as regras de negócio do sistema utilizando as entidades da camada anterior. Os casos de uso são responsáveis por definir as ações que o sistema pode executar e como elas devem ser executadas. Eles também são responsáveis por garantir que as regras de negócio sejam aplicadas de forma consistente em todo o sistema.
 
-- **Application**: Camada responsável por armazenar os casos de uso do projeto. Essa camada é responsável por conter as regras de negócio do projeto.
+A terceira camada é a de **infraestrutura**, que contém o código responsável por fornecer as implementações concretas para as interfaces definidas nas camadas de entidades e casos de uso. Essa camada é responsável por implementar os detalhes técnicos necessários para que o sistema possa interagir com o mundo exterior, como bancos de dados, serviços externos, dispositivos de entrada e saída, entre outros.
 
-- **Infrastructure**: Camada responsável por armazenar os frameworks e drivers do projeto. Essa camada é responsável por conter os frameworks e drivers que são utilizados pelas outras camadas do projeto.
+Por fim, a camada de **apresentação** é responsável por fornecer uma interface de usuário para o sistema. Essa camada é responsável por apresentar as informações para o usuário e capturar as entradas do usuário para repassá-las aos casos de uso. É importante notar que a camada de apresentação deve ser a camada mais externa do sistema, ou seja, ela não deve depender de nenhuma das outras camadas, mas sim o contrário. Dessa forma, a camada de apresentação se torna mais flexível e fácil de ser substituída, já que as outras camadas não precisam ser modificadas para acomodar mudanças na interface de usuário.
 
+## Como utilizar?
 
-## Como usar
+1. Clone o repositorio, utilizando o protocolo SSH ou HTTPS
 
-1. Clone o repositorio
+(*exemplo com ssh*)
 
 ```bash
-git clone git@github.com:arthur-rs/nodejs-template.git
+git clone git@github.com:arthur-rs/typescript-clean-arch-template.git
 ```
 
-2. Instale as dependencias
+ou
+
+ (*exemplo com https*)
+
+```bash
+git clone https://github.com/arthur-rs/typescript-clean-arch-template.git
+```
+
+2. Após clonar o repositório, instale as dependências
 
 ```bash
 npm install
 ```
 
-3. Instale o Husky
+3. E por fim, instale os hooks do husky
 
 ```bash
 npm run husky:install
@@ -39,21 +48,42 @@ npm run husky:install
 
 Pronto, agora você pode começar a desenvolver seu projeto.
 
+**Divirta-se!**
+
 ## Tecnologias utilizadas
 
-- [Typescript](https://www.typescriptlang.org/)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [Husky](https://typicode.github.io/husky/#/)
-- [Commitlint](https://commitlint.js.org/#/)    
+### Commitlint
 
-## Arquitetura e design patterns
+O Commitlint é uma ferramenta que ajuda a garantir que as mensagens de commit estejam em conformidade com um determinado padrão. No projeto, o Commitlint é utilizado para garantir que as mensagens de commit sigam um formato padronizado e fácil de entender.
 
-O template utiliza a arquitetura [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) e os seguintes design patterns:
+### Eslint
 
-- [SOLID](https://en.wikipedia.org/wiki/SOLID)
-- [Repository Pattern](https://www.baeldung.com/java-dao-vs-repository)
+O Eslint é uma ferramenta de análise de código estático que ajuda a identificar e reportar erros e problemas de estilo no código. No projeto, o Eslint é utilizado para garantir a consistência e qualidade do código.
+
+### Husky
+
+O Husky é uma ferramenta que permite executar scripts antes de cada commit ou push para o repositório. No projeto, o Husky é utilizado para garantir que o código esteja em conformidade com as regras de estilo e qualidade antes de ser enviado para o repositório.
+
+### Jest
+
+O Jest é um framework de testes para aplicações Javascript. No projeto, o Jest é utilizado para criar e executar testes automatizados, garantindo que o código funcione como esperado e não tenha regressões.
+
+### Node.js
+
+O Node.js é uma plataforma de desenvolvimento de aplicações backend em Javascript. No projeto, o Node.js é utilizado como plataforma de desenvolvimento, permitindo que o código seja executado em um servidor.
+
+### Nest.js
+
+O Nest.js é um framework de desenvolvimento web em Node.js que utiliza conceitos de programação orientada a objetos e programação funcional. No projeto, o Nest.js é utilizado para criar uma arquitetura escalável e modular, facilitando o desenvolvimento e a manutenção do código.
+
+### SWC
+
+O SWC é um compilador JavaScript/TypeScript de alto desempenho e baixa latência. No projeto, o SWC é utilizado para compilar o código TypeScript em JavaScript otimizado para produção.
+
+### Typescript
+
+O Typescript é um superset da linguagem Javascript que adiciona recursos como tipagem estática, interfaces e classes. No projeto, o Typescript é utilizado para melhorar a segurança do código, tornando-o mais fácil de ler e manter.
 
 ## Créditos
 
-- [Arthur Reis](https://github.com/arthur-rs)
+Pensando e desenvolvido por [Arthur Reis](https://github.com/arthur-rs)!

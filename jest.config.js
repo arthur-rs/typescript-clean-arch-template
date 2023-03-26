@@ -1,8 +1,11 @@
+const { resolve } = require("path")
+
 module.exports = {
+	preset: "ts-jest/presets/js-with-ts",
 	transform: {
-		"^.+\\.(t|j)sx?$": "@swc/jest",
+		"^.+\\.(t|j)sx?$": ["@swc/jest"]
 	},
 	moduleNameMapper: {
-		"^@/(.*)$": "<rootDir>/src/$1" 
+		"^@/(.*)$": resolve(__dirname, "src/$1"),
 	},
 }
