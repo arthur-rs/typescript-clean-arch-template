@@ -1,6 +1,6 @@
 import { EntityValidator } from "@/entities/@shared/entity.validator"
-import { Notification } from "@/entities/@shared/notification.validation-handler"
 import { NotificationError } from "@/entities/@shared/errors/notification.error"
+import { Notification } from "@/entities/@shared/notification.validation-handler"
 
 export class Entity<Identifier> {
 
