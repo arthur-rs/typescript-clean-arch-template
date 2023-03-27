@@ -10,8 +10,8 @@ export class HealthController {
 		private readonly prismaIndicator: PrismaHeathIndiciator
 	) {}
 
-  @Get()
-  @HealthCheck()
+	@Get()
+	@HealthCheck()
 	check() {
 		return this.health.check([
 			() => this.prismaIndicator.isHealthy("prisma")

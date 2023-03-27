@@ -53,15 +53,18 @@
         "typescript": "^4.9.5"
     },
     "dependencies": {
+        "@chankamlam/nest-jaeger": "^1.0.16",
         "@nestjs/common": "^9.3.12",
         "@nestjs/core": "^9.3.12",
         "@nestjs/platform-express": "^9.3.12",
+        "@nestjs/swagger": "^6.2.1",
         "@nestjs/terminus": "^9.2.1",
         "@prisma/client": "^4.11.0",
         "cache-manager": "^5.2.0",
         "class-transformer": "^0.5.1",
         "class-validator": "^0.14.0",
         "date-fns": "^2.29.3",
+        "nestjs-jaeger": "^1.0.5",
         "reflect-metadata": "^0.1.13",
         "rxjs": "^7.8.0",
         "ts-jest": "^29.0.5",
