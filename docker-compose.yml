@@ -34,6 +34,16 @@ services:
     networks:
       - default
 
+  redis:
+    image: redis:7.0.10
+    container_name: clean-arch-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./.docker/volumes/redis_data:/data
+    networks:
+      - default
+
   jaeger:
     image: jaegertracing/all-in-one:latest
     container_name: clean-arch-jaeger

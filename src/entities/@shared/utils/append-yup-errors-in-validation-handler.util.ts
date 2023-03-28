@@ -13,7 +13,7 @@ export function appendYupErrorsInValidationHandler<T>(
 	} catch (error) {
 		const yupValidationErrors = error as yup.ValidationError
 		yupValidationErrors.inner.forEach((yupValidationError) => {
-			handler.appendError(new DomainError(yupValidationError.path ?? "", yupValidationError.message))
+			handler.appendError(DomainError.from(yupValidationError.path ?? "", yupValidationError.message))
 		})
 	}
 }
