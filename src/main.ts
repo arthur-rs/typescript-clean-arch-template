@@ -1,6 +1,7 @@
 import { ValidationPipe, VersioningType } from "@nestjs/common"
 import { NestFactory } from "@nestjs/core"
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger"
+import * as Sentry from "@sentry/node"
 
 import { AppModule } from "./app.module"
 
@@ -23,6 +24,9 @@ async function bootstrap() {
 		.build()
 	const document = SwaggerModule.createDocument(app, config)
 	SwaggerModule.setup("api", app, document)
+	Sentry.init({
+		dsn: process.env.SENTRY_DSN,
+	})
 	await app.listen(3000)
 }
 

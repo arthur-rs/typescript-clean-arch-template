@@ -39,6 +39,7 @@
         "@swc/cli": "^0.1.62",
         "@swc/core": "^1.3.42",
         "@swc/jest": "^0.2.24",
+        "@types/jaeger-client": "^3.18.4",
         "@types/jest": "^29.4.0",
         "@typescript-eslint/eslint-plugin": "^5.54.1",
         "@typescript-eslint/parser": "^5.54.1",
@@ -52,22 +53,23 @@
         "typescript": "^4.9.5"
     },
     "dependencies": {
-        "@chankamlam/nest-jaeger": "^1.0.16",
         "@nestjs/common": "^9.3.12",
+        "@nestjs/config": "^2.3.1",
         "@nestjs/core": "^9.3.12",
         "@nestjs/platform-express": "^9.3.12",
         "@nestjs/swagger": "^6.2.1",
         "@nestjs/terminus": "^9.2.1",
         "@prisma/client": "^4.11.0",
+        "@sentry/node": "^7.45.0",
         "cache-manager": "^5.2.0",
         "class-transformer": "^0.5.1",
         "class-validator": "^0.14.0",
         "date-fns": "^2.29.3",
-        "nestjs-jaeger": "^1.0.5",
+        "jaeger-client": "^3.19.0",
+        "purify-ts": "^2.0.0",
         "reflect-metadata": "^0.1.13",
         "rxjs": "^7.8.0",
         "ts-jest": "^29.0.5",
-        "yup": "^1.0.2",
-		"purify-ts": "^2.0.0"
+        "yup": "^1.0.2"
     }
 }
