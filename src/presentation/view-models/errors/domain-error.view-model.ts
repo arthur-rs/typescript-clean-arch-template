@@ -1,6 +1,6 @@
 export class DomainErrorViewModel {
 	constructor(
-		readonly _field: string,
-		readonly _message: string
+		readonly field: string,
+		readonly message: string
 	) {}
 }

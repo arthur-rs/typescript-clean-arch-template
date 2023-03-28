@@ -1,8 +1,8 @@
 export class BaseErrorViewModel {
 	constructor(
-		readonly _code: string,
-		readonly _message: string,
-		readonly _severity: "low" | "medium" | "high",
-		readonly _timestamp: string = new Date().toISOString()
+		readonly code: string,
+		readonly message: string,
+		readonly severity: "low" | "medium" | "high",
+		readonly timestamp: string = new Date().toISOString()
 	) {}
 }
