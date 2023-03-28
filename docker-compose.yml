@@ -10,7 +10,7 @@ services:
     env_file:
       - .env
     ports:
-      - "${APP_PORT}:3000"
+      - "${HTTP_PORT}:3000"
     volumes:
       - .:/app
     depends_on:
