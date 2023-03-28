@@ -17,7 +17,7 @@ class EntityId extends Identifier<string> {
 	}
 }
 
-describe("(Unit) Entity", () => {
+describe("Entity", () => {
 
 	it("should be able create a new entity", () => {
 		const idExpected = new EntityId("id")
@@ -41,64 +41,35 @@ describe("(Unit) Entity", () => {
 		expect(entity.updatedAt).toBeInstanceOf(Date)
 	})
 
-	it("should be able throw exception when id is null", () => {
-		const idExpected = null
-		const createdAtExpected = new Date()
-		const updatedAtExpected = new Date()
-		const expectedError = new NotificationError("Entity is invalid", [
-			new DomainError("id", "the id is required")
-		])
+	it("should be able compare two entities equals", () => {
+		const entity1 = new Entity("id")
+		const entity2 = entity1
 
-		expect(() => new Entity(idExpected, createdAtExpected, updatedAtExpected))
-			.toThrow(expectedError)
+		expect(entity1.equals(entity2)).toBeTruthy()
 	})
 
-	it("should be able throw exception when id is undefined", () => {
-		const idExpected = undefined
-		const createdAtExpected = new Date()
-		const updatedAtExpected = new Date()
-		const expectedError = new NotificationError("Entity is invalid", [
-			new DomainError("id", "the id is required")
-		])
+	it("should be able compare two entities with same id", () => {
+		const entity1 = new Entity("id")
+		const entity2 = new Entity("id")
 
-		expect(() => new Entity(idExpected, createdAtExpected, updatedAtExpected))
-			.toThrow(expectedError)
+		expect(entity1.equals(entity2)).toBeTruthy()
 	})
 
-	it("should be able throw exception when created is in the future", () => {
-		const idExpected = new EntityId("id")
-		const createdAtExpected = new Date("2100-01-01")
-		const updatedAtExpected = new Date()
-		const expectedError = new NotificationError("Entity is invalid", [
-			new DomainError("createdAt", "the created date must be before the current date")
-		])
+	it("should not be able compare two entities with different id", () => {
+		const entity1 = new Entity("id")
+		const entity2 = new Entity("id2")
 
-		expect(() => new Entity(idExpected, createdAtExpected, updatedAtExpected))
-			.toThrow(expectedError)
+		expect(entity1.equals(entity2)).toBeFalsy()
 	})
 
-	it("should be able throw exception when updated is in the future", () => {
-		const idExpected = new EntityId("id")
-		const createdAtExpected = new Date()
-		const updatedAtExpected = new Date("2100-01-01")
-		const expectedError = new NotificationError("Entity is invalid", [
-			new DomainError("updatedAt", "the updated date must be before the current date")
-		])
-
-		expect(() => new Entity(idExpected, createdAtExpected, updatedAtExpected))
-			.toThrow(expectedError)
+	it("should not be able compare two entities with null or undefined value", () => {
+		const entity = new Entity("Id")
+		
+		// @ts-ignore
+		expect(entity.equals(null)).toBeFalsy()
+		
+		// @ts-ignore
+		expect(entity.equals(undefined)).toBeFalsy()
 	})
-
-	it("should be able throw exception when created is after updated", () => {
-		const idExpected = new EntityId("id")
-		const createdAtExpected = new Date("2100-01-01")
-		const updatedAtExpected = new Date()
-		const expectedError = new NotificationError("Entity is invalid", [
-			new DomainError("createdAt", "the created date must be before the updated date"),
-			new DomainError("updatedAt", "the updated date must be after the created date")
-		])
-
-		expect(() => new Entity(idExpected, createdAtExpected, updatedAtExpected))
-			.toThrow(expectedError)
-	})
+	
 })

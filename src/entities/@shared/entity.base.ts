@@ -1,27 +1,15 @@
-import { EntityValidator } from "@/entities/@shared/entity.validator"
-import { NotificationError } from "@/entities/@shared/errors/notification.error"
-import { Notification } from "@/entities/@shared/notification.validation-handler"
-
 export class Entity<Identifier> {
 
-	private readonly _id: Identifier
+	protected readonly _id: Identifier
     
-	private readonly _createdAt: Date = new Date()
+	protected readonly _createdAt: Date = new Date()
 
-	private readonly _updatedAt: Date = new Date()
+	protected _updatedAt: Date = new Date()
 
 	constructor(id: Identifier, createdAt?: Date, updatedAt?: Date) {
 		this._id = id
 		this._createdAt = createdAt || new Date()
 		this._updatedAt = updatedAt || new Date()
-
-		const notification = new Notification()
-
-		new EntityValidator(notification, this).validate()
-
-		if(notification.hasErrors()) {
-			throw new NotificationError("Entity is invalid", notification.errors)
-		}
 	}
 
 	public get id(): Identifier {
@@ -40,15 +28,12 @@ export class Entity<Identifier> {
 		if (entity === null || entity === undefined) {
 			return false
 		}
-
 		if (this === entity) {
 			return true
 		}
-
 		if (this.id !== entity.id) {
 			return false
 		}
-
 		return true
 	}
 }

@@ -5,8 +5,16 @@ export class Notification implements ValidationHandler {
 
 	private _errors: DomainError[] = []
 
-	constructor(initialErrors: DomainError[] | null | undefined = []) {
+	private constructor(initialErrors: DomainError[] | null | undefined = []) {
 		this._errors = initialErrors ?? []
+	}
+
+	static empty(): Notification {
+		return new Notification()
+	}
+
+	static fromErrors(errors: DomainError[]): Notification {
+		return new Notification(errors)
 	}
 
 	get errors(): DomainError[] {
